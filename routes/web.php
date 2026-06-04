@@ -18,7 +18,7 @@ Route::get('/patient', [PatientController::class, 'index'])
 
 Route::get('/praktijkmanagement', [PraktijkmanagementController::class, 'index'])
     ->name('praktijkmanagement.index')
-    ->middleware(['auth', 'role:praktijkmanagement']);
+    ->middleware(['auth', 'role:praktijkmanagement,patient']);
 
 Route::get('/assistent', [AssistentController::class, 'index'])
     ->name('assistent.index')
