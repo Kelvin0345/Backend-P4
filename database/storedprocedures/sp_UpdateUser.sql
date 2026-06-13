@@ -1,0 +1,23 @@
+USE Breezedemo;
+
+DROP PROCEDURE IF EXISTS Sp_UpdateUser;
+
+DELIMITER $$
+
+CREATE PROCEDURE Sp_UpdateUser(
+     IN p_id INTEGER
+    ,IN p_Name VARCHAR(50)
+    ,IN p_Email VARCHAR(100)
+    ,IN p_Rolename VARCHAR(50)    
+)
+BEGIN
+
+    update users as USRS
+    set    USRS.name = p_Name,
+           USRS.email = p_Email,
+           USRS.rolename = p_Rolename,
+    WHERE  USRS.id = p_Id;
+
+End$$
+
+DELIMITER ; 
