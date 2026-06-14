@@ -108,7 +108,7 @@ class PraktijkmanagementController extends Controller
         //
         $result = $this->userModel->sp_DeleteUser($userId);
 
-        if ($result > 0) {
+        if (!$result > 0) {
             return redirect()->route('praktijkmanagement.userroles')
                              ->with('success', 'User is succesvol verwijdert');
         }
