@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AllergeenController;
 use App\Http\Controllers\AssistentController;
 use App\Http\Controllers\MondhygienistController;
 use App\Http\Controllers\PatientController;
@@ -11,6 +12,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/Allergeen', [AllergeenController::class, 'index'])->name('allergeen.index');
+
+Route::get('/Allergeen/create', [AllergeenController::class, 'create'])->name('allergeen.create');
+
+Route::post('Allergeen', [AllergeenController::class, 'store'])->name('allergeen.store');
+
+Route::delete('Allergeen/{id}', [AllergeenController::class, 'destroy'])->name('allergeen.destroy');
+
+Route::get('Allergeen/{id}/edit', [AllergeenController::class, 'edit'])->name('allergeen.edit');
+Route::put('Allergeen/{id}', [AllergeenController::class, 'update'])->name('allergeen.update');
+
+
 
 Route::get('/patient', [PatientController::class, 'index'])
     ->name('patient.index')
