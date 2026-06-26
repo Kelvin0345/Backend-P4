@@ -67,7 +67,7 @@
                             </form>
                         </td>
                         <td>
-                            <form action="{{ route('allergeen.edit', $allergeen->Id) }}" method="POST">
+                            <form action="{{ route('allergeen.edit', $allergeen->Id) }}" method="GET">
                                 @csrf
                                 @method('GET')
                                 <button type="submit" class="btn btn-success btn-sm">Wijzig</button>

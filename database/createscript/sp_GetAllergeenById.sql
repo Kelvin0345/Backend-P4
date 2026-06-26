@@ -1,3 +1,5 @@
+USE breezedemo;
+
 DROP PROCEDURE IF EXISTS sp_GetAllergeenById;
 
 DELIMITER $$

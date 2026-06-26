@@ -35,10 +35,11 @@ class AllergeenModel extends Model
 
     public function sp_GetAllergeenById($id)
     {
-        $result = DB::selectOne('CALL sp_GetAllergeenById(:id)', [
-            'id' => $id
-        ]);
-        return $result->affected;
+        return DB::selectOne(
+            'CALL sp_GetAllergeenById(:id)',
+            ['id' => $id]
+        );
+       
     }
 
     public function sp_UpdateAllergeen($id, $name, $description)

@@ -23,29 +23,20 @@
                 </div>
             @endif
 
-            <form method="POST" action="{{ route('allergeen.update', $allergeen->Id) }}">
+            <form method="POST" action="{{ route('allergeen.update', $allergeen->id) }}">
                 @csrf
                 @method('PUT')
 
                 <div class="mb-3">
                     <label for="naam" class="form-label">Naam</label>
-                    <input
-                        type="text"
-                        id="naam"
-                        name="naam"
-                        class="form-control"
-                        value="{{ old('naam', $allergeen->Naam) }}"
-                        required>
+                    <input type="text" id="naam" name="naam" class="form-control" 
+                        value="{{ old('naam', $allergeen->Naam) }}" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="omschrijving" class="form-label">Omschrijving</label>
-                    <input
-                        type="text"
-                        id="omschrijving"
-                        name="omschrijving"
-                        class="form-control"
-                        value="{{ old('omschrijving', $allergeen->Omschrijving) }}"
+                    <input type="text" id="omschrijving" name="omschrijving" class="form-control" 
+                    value="{{ old('omschrijving', $allergeen->Omschrijving) }}"
                         required>
                 </div>
 
